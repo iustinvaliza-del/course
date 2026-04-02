@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(1:*)",
+      "Bash(npm_config_yes=true npx create-vite@latest . --template react)",
+      "Bash(npm install:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Read(//c/Users/lazyf/My Drive/Agent Memory/Agent Memory//**)",
+      "Read(//c/Users/lazyf/My Drive/Agent Memory/Agent Memory/**)",
+      "Bash(git config:*)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}

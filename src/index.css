@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg text-textPrimary font-sans antialiased;
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-textMuted;
+  }
+}
+
+/* ─── Entrance animations ─────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease both;
+}
+
+/* Stagger helpers */
+.delay-1 { animation-delay: 80ms; }
+.delay-2 { animation-delay: 160ms; }
+.delay-3 { animation-delay: 240ms; }
+.delay-4 { animation-delay: 320ms; }
+.delay-5 { animation-delay: 400ms; }
+
+/* ─── Lesson prose typography ─────────────────────────── */
+.lesson-prose {
+  color: #9fa6bc; /* textSecondary */
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 65ch;
+}
+
+.lesson-prose p {
+  margin-bottom: 1.25rem;
+}
+
+.lesson-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-prose strong {
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+.lesson-prose code {
+  background: #2a2c4a;
+  color: #a855f7;
+  font-size: 0.8125rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.15em 0.45em;
+  border-radius: 4px;
+  border: 1px solid #363858;
+}
+
+.lesson-prose ul,
+.lesson-prose ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+  space-y: 0.5rem;
+}
+
+.lesson-prose ul { list-style-type: disc; }
+.lesson-prose ol { list-style-type: decimal; }
+
+.lesson-prose li {
+  margin-bottom: 0.4rem;
+}
+
+.lesson-prose li::marker {
+  color: #7c3aed;
+}
+
+/* ─── Module card stagger ──────────────────────────────── */
+.module-card-grid .module-card:nth-child(1) { animation-delay: 0ms; }
+.module-card-grid .module-card:nth-child(2) { animation-delay: 60ms; }
+.module-card-grid .module-card:nth-child(3) { animation-delay: 120ms; }
+.module-card-grid .module-card:nth-child(4) { animation-delay: 180ms; }
+.module-card-grid .module-card:nth-child(5) { animation-delay: 240ms; }
+
+/* ─── Misc utilities ──────────────────────────────────── */
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #a855f7 0%, #7c3aed 50%, #6366f1 100%);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.25);
+  }
+}
